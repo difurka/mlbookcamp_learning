@@ -21,8 +21,8 @@ So the next steps was done:
 - Explore and prepare the data [mlzoomcamp_midterm_project.ipynb](mlzoomcamp_midterm_project.ipynb)
 - Train the best model [mlzoomcamp_midterm_project.ipynb](mlzoomcamp_midterm_project.ipynb)
 - Export the notebook into a script [train.py](train.py), [predict.py](predict.py)
-- Put your model into a web service [predict-test.py](predict-test.py)
+- Put your model into a web service [predict.py](predict.py)
 - Deploy it locally with Docker [Dockerfile](Dockerfile)
-- Deploy to the cloud
+
 
 With any questions you can write to me in telegram @difurka
