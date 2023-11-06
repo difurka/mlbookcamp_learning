@@ -11,10 +11,11 @@ In file [mlzoomcamp_midterm_project.ipynb](mlzoomcamp_midterm_project.ipynb) the
 
 In folder "data" there is dataset for training model. 
 In file [train.py](train.py) model for Random Forest Classifier(the best model) is trained.
-In file [predict.py](predict.py) prediction created.
-In file [predict-test.py](predict-test.py) ut model into a web service
+In file [predict.py](predict.py) prediction is created.
+In file [predict-test.py](predict-test.py) put the model into a web service
 In file [Dockerfile](Dockerfile) deploy it locally with Docker.
 Files "Pipfile" and "Pipfile.loc" are for environment.
+In file [makefile](makefile) some commands is located for create an image, and a container
 
 So the next steps was done:
 - Find a dataset (https://www.kaggle.com/competitions/advanced-dls-spring-2021/overview)

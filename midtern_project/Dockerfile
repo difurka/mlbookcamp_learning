@@ -1,5 +1,5 @@
 # First install the python 3.8, the slim version uses less space
-FROM python:3.10
+FROM python:3.10-slim
 
 # Install pipenv library in Docker 
 RUN pip install pipenv
@@ -11,7 +11,7 @@ WORKDIR /app
 COPY ["Pipfile", "Pipfile.lock", "./"]
 
 # install the pipenv dependencies for the project and deploy them.
-# RUN pipenv requirements > requirements.txt && pip install -r requirements.txt
+RUN pipenv requirements > requirements.txt && pip install -r requirements.txt
 
 # Copy any python files and the model we had to the working directory of Docker 
 COPY ["predict.py", "model_tree.bin", "./"]
@@ -20,5 +20,4 @@ COPY ["predict.py", "model_tree.bin", "./"]
 EXPOSE 9696
 
 # If we run the Docker image, we want our churn app to be running
-# ENTRYPOINT ["gunicorn", "--bind", "0.0.0.0:9696", "predict:app"]
-ENTRYPOINT [ "bash" ]
+ENTRYPOINT ["gunicorn", "--bind", "0.0.0.0:9696", "predict:app"]
