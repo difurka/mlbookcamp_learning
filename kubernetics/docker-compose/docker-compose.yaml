@@ -1,0 +1,11 @@
+version: '3.9'
+services:
+  cl_model:
+    image: zoomcamp_10_model:xception_v4_001
+
+  gatew:
+    image: zoomcamp_10_gateway:001
+    environment:
+      - TF_SERVING_HOST=cl_model:8500
+    ports:
+      - "9696:9696"
