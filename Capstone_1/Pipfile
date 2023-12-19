@@ -1,0 +1,21 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+torch = "*"
+scikit-image = "*"
+wget = "*"
+pyunpack = "*"
+requests = "*"
+patool = "*"
+rarfile = "*"
+gunicorn = "*"
+flask = "*"
+pandas = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.10"
