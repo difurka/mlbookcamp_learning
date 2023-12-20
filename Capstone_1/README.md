@@ -1,3 +1,12 @@
+# Capstone 1
+
+
+With any questions you can write to me in telegram @difurka
+
+The project solves the problem of mole segmentation. Since we cannot display pictures in 'gunicorn', 'get_response' sends the score of the area of intersection of the obtained result and the target.
+
+The result of model you can see in Notebook.ipynb:
+![result](./img/output.png)
 
 
 ## Content
@@ -8,3 +17,4 @@
 - Script **predict.py** (suggested name): loading the model, serving it via a web service with Flask
 - **Pipenv** and **Pipenv.lock**: Files with dependencies
 - **Dockerfile**: running the service
+- **makefile**: easy start docker and other programs

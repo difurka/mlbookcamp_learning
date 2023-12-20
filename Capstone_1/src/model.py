@@ -64,7 +64,6 @@ class SegNet(nn.Module):
                          )
 
     def forward(self, x):
-        print(x.shape)
         # encoder
         e0 = self.pool0(self.enc_conv0(x))
         e1 = self.pool1(self.enc_conv1(e0))
@@ -78,6 +77,6 @@ class SegNet(nn.Module):
         d0 = self.dec_conv0(self.upsample0(b))
         d1 = self.dec_conv1(self.upsample1(d0))
         d2 = self.dec_conv2(self.upsample2(d1))
-        d3 = self.dec_conv3(self.upsample3(d2))  # no activation
+        d3 = self.dec_conv3(self.upsample3(d2)) 
         return d3
 

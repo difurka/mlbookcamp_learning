@@ -12,3 +12,6 @@ get_response:
 
 train:
 	python3 train.py
+
+pred:
+	python3 predict.py

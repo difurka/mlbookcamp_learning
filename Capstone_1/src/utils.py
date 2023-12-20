@@ -28,13 +28,13 @@ def runcmd(cmd, verbose = False, *args, **kwargs):
 
 
 def get_datasets(batch_size):
-    # if not os.path.exists('./data'):
-    #     os.mkdir('./data')
+    if not os.path.exists('./data'):
+        os.mkdir('./data')
    
-    # runcmd("wget https://www.dropbox.com/s/8lqrloi0mxj2acu/PH2Dataset.rar", verbose = True)
-    # runcmd("unrar x PH2Dataset.rar ./data", verbose = True)
+    runcmd("wget https://www.dropbox.com/s/8lqrloi0mxj2acu/PH2Dataset.rar", verbose = True)
+    runcmd("unrar x PH2Dataset.rar ./data", verbose = True)
 
-    # os.remove('PH2Dataset.rar')
+    os.remove('PH2Dataset.rar')
     images = []
     lesions = []
 
@@ -78,6 +78,7 @@ def get_datasets(batch_size):
 
 
 def iou_pytorch(outputs: torch.Tensor, labels: torch.Tensor):
+    print(outputs.shape, labels.shape)
     outputs = outputs.squeeze(1).byte()  # BATCH x 1 x H x W => BATCH x H x W
     labels = labels.squeeze(1).byte()
     SMOOTH = 1e-8
@@ -144,10 +145,3 @@ def train(model, opt, loss_fn, epochs, lr, data_tr, data_val, metric=iou_pytorch
         losses['valid'].append(avg_loss.item())
         scores.append(score_model(model, metric, data_val))
     return [losses, scores]
-
-
-
-# def predict(model, data):
-#     model.eval()  # testing mode
-#     Y_pred = [ X_batch for X_batch, _ in data]
-#     return np.array(Y_pred)
